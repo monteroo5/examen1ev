@@ -1,5 +1,3 @@
-import com.sun.security.jgss.GSSUtil;
-
 import java.util.Scanner;
 
 public class Ejercicio1 {
@@ -9,7 +7,7 @@ public class Ejercicio1 {
     public static int askSize() {
         int num;
         do {
-            System.out.println("Introduce el tamapo");
+            System.out.println("Introduce el tamaño:");
             num = scanner.nextInt();
             scanner.nextLine();
             if (num <= 0) {
@@ -19,37 +17,34 @@ public class Ejercicio1 {
         return num;
     }
 
-    //b
+    // b
     public static double[] askArray() {
         int size = askSize();
         double[] numbers = new double[size];
-
         for (int i = 0; i < numbers.length; i++) {
-            System.out.println("Introduce un número");
+            System.out.println("Introduce un número:");
             numbers[i] = scanner.nextDouble();
             scanner.nextLine();
         }
-
         return numbers;
     }
 
     // c
-    public static double average(double[] numbers1, double[] numbers2) {
+    public static double average (double[] numbers1, double[] numbers2) {
         double sum = 0;
         for (var number : numbers1) {
-            sum += number;
+            sum+= number;
         }
 
         for (var number : numbers2) {
-            sum += number;
+            sum+= number;
         }
-
         return sum / (numbers1.length + numbers2.length);
     }
 
     // d
-    public static void printResult(double average) {
-        System.out.println("La media es " + average);
+    public static void printArray(double average) {
+        System.out.println("La media es: " + average);
     }
 
     // e
@@ -59,8 +54,6 @@ public class Ejercicio1 {
 
         double average = average(numbers1, numbers2);
 
-        printResult(average);
-
+        printArray(average);
     }
-
 }
